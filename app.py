@@ -18,6 +18,14 @@ model.eval()
 
 
 # Flask route for prediction
+@app.route('/')
+def home():
+    return "Welcome to the LSTM Predictor. Use the /predict endpoint."
+
+@app.route('/favicon.ico')
+def favicon():
+    return '', 204  # Suppress 404 for favicon requests
+
 @app.route('/predict', methods=['POST'])
 def predict():
     data = request.get_json()  # Get the review text from the POST request
