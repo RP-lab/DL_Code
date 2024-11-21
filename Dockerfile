@@ -6,6 +6,6 @@ RUN pip install -r requirements.txt
 
 COPY src/ ./src/
 # Add step to train the model
-RUN python ./train_model.py  # This will train and save the model weights
+RUN python ./src/train.py  # This will train and save the model weights
 
-CMD ["python", "./app.py"]
+CMD ["python", "./src/deploy.py"]
